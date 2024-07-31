@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7a18e17de5d5ddc6a163b01f9c5365e1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_7a18e17de5d5ddc6a163b01f9c5365e1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7a18e17de5d5ddc6a163b01f9c5365e1 = L.map(
+                "map_7a18e17de5d5ddc6a163b01f9c5365e1",
+                {
+                    center: [20.611090176470586, -98.69444970588236],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_87a24cdc993cb54331a112fd57f137c9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_87a24cdc993cb54331a112fd57f137c9.addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+            var marker_ca7b6af539e2b952a1c1ebe157200ab5 = L.marker(
+                [33.4499, -118.4873],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_0d85066633630310cdcc38b1d0ada5ee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0a3482b7346dc5ff829cc90c74d36102 = $(`<div id="html_0a3482b7346dc5ff829cc90c74d36102" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1977</div>`)[0];
+                popup_0d85066633630310cdcc38b1d0ada5ee.setContent(html_0a3482b7346dc5ff829cc90c74d36102);
+            
+        
+
+        marker_ca7b6af539e2b952a1c1ebe157200ab5.bindPopup(popup_0d85066633630310cdcc38b1d0ada5ee)
+        ;
+
+        
+    
+    
+            var marker_50b00fda3b33f01ae025074935909a1c = L.marker(
+                [33.845833, -118.398889],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_4e95a98c39401c5f48348ba59c6f5dc2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4f04ad5b089458b0e73d1748e25cc9e7 = $(`<div id="html_4f04ad5b089458b0e73d1748e25cc9e7" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1975</div>`)[0];
+                popup_4e95a98c39401c5f48348ba59c6f5dc2.setContent(html_4f04ad5b089458b0e73d1748e25cc9e7);
+            
+        
+
+        marker_50b00fda3b33f01ae025074935909a1c.bindPopup(popup_4e95a98c39401c5f48348ba59c6f5dc2)
+        ;
+
+        
+    
+    
+            var marker_120fc0e17aaa13fca60d3c81aab0151b = L.marker(
+                [33.845833, -118.398889],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_137005014f44e6704443dc9f90a28dc3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_949009a0347712778cb09fc33d5a6294 = $(`<div id="html_949009a0347712778cb09fc33d5a6294" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1975</div>`)[0];
+                popup_137005014f44e6704443dc9f90a28dc3.setContent(html_949009a0347712778cb09fc33d5a6294);
+            
+        
+
+        marker_120fc0e17aaa13fca60d3c81aab0151b.bindPopup(popup_137005014f44e6704443dc9f90a28dc3)
+        ;
+
+        
+    
+    
+            var marker_872abd8330729ef36e7768f771c8c0e8 = L.marker(
+                [8.78, -79.53],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_7a4d2ab140aaeef0710e9e452635103f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_54264c9b8e610f10c09e6dd4e9483496 = $(`<div id="html_54264c9b8e610f10c09e6dd4e9483496" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1975</div>`)[0];
+                popup_7a4d2ab140aaeef0710e9e452635103f.setContent(html_54264c9b8e610f10c09e6dd4e9483496);
+            
+        
+
+        marker_872abd8330729ef36e7768f771c8c0e8.bindPopup(popup_7a4d2ab140aaeef0710e9e452635103f)
+        ;
+
+        
+    
+    
+            var marker_44e87e4abc189269b7d9be08ea11f213 = L.marker(
+                [8.78, -79.53],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_d4f6add4b68f4aebb73d65795779a1be = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_32853ef9ee360beedcff9e13c9a14256 = $(`<div id="html_32853ef9ee360beedcff9e13c9a14256" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1975</div>`)[0];
+                popup_d4f6add4b68f4aebb73d65795779a1be.setContent(html_32853ef9ee360beedcff9e13c9a14256);
+            
+        
+
+        marker_44e87e4abc189269b7d9be08ea11f213.bindPopup(popup_d4f6add4b68f4aebb73d65795779a1be)
+        ;
+
+        
+    
+    
+            var marker_c9c805740f385633d8d3dd0b8c356182 = L.marker(
+                [8.78, -79.53],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_4b703538ab9132a3f6c92f1ddd9570ad = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ddabf9a1e01e63894b85ef0f3396e4fd = $(`<div id="html_ddabf9a1e01e63894b85ef0f3396e4fd" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1974</div>`)[0];
+                popup_4b703538ab9132a3f6c92f1ddd9570ad.setContent(html_ddabf9a1e01e63894b85ef0f3396e4fd);
+            
+        
+
+        marker_c9c805740f385633d8d3dd0b8c356182.bindPopup(popup_4b703538ab9132a3f6c92f1ddd9570ad)
+        ;
+
+        
+    
+    
+            var marker_ae7f180fc86e6238c32825265e22603a = L.marker(
+                [8.78, -79.53],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_bab9bdad1b1d12d3d98e5c14c154f2fc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d373f7bd9e6c33ec6f7bac54a2e436c6 = $(`<div id="html_d373f7bd9e6c33ec6f7bac54a2e436c6" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1974</div>`)[0];
+                popup_bab9bdad1b1d12d3d98e5c14c154f2fc.setContent(html_d373f7bd9e6c33ec6f7bac54a2e436c6);
+            
+        
+
+        marker_ae7f180fc86e6238c32825265e22603a.bindPopup(popup_bab9bdad1b1d12d3d98e5c14c154f2fc)
+        ;
+
+        
+    
+    
+            var marker_7d2149f6328f898c6c013673b605c6b0 = L.marker(
+                [8.78, -79.53],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_6f516e1e70a9bb634a1114fbda87587a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6f185fa48fbcf0ba1c1a9c3cd75afe7b = $(`<div id="html_6f185fa48fbcf0ba1c1a9c3cd75afe7b" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1973</div>`)[0];
+                popup_6f516e1e70a9bb634a1114fbda87587a.setContent(html_6f185fa48fbcf0ba1c1a9c3cd75afe7b);
+            
+        
+
+        marker_7d2149f6328f898c6c013673b605c6b0.bindPopup(popup_6f516e1e70a9bb634a1114fbda87587a)
+        ;
+
+        
+    
+    
+            var marker_05c39754a679f6882702f899d4c8599b = L.marker(
+                [8.78, -79.53],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_27e8bc51246d6078b85616c4814ca7f4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d8037835cf7cb4eeb548d12f289df603 = $(`<div id="html_d8037835cf7cb4eeb548d12f289df603" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1972</div>`)[0];
+                popup_27e8bc51246d6078b85616c4814ca7f4.setContent(html_d8037835cf7cb4eeb548d12f289df603);
+            
+        
+
+        marker_05c39754a679f6882702f899d4c8599b.bindPopup(popup_27e8bc51246d6078b85616c4814ca7f4)
+        ;
+
+        
+    
+    
+            var marker_bd594416aacaee2b9b58b6312457e1df = L.marker(
+                [9.55, -78.9833],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_87a4067a924fce6f24152c6d885b6973 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_98da3deee0b5f5c34de6779c323598f1 = $(`<div id="html_98da3deee0b5f5c34de6779c323598f1" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1972</div>`)[0];
+                popup_87a4067a924fce6f24152c6d885b6973.setContent(html_98da3deee0b5f5c34de6779c323598f1);
+            
+        
+
+        marker_bd594416aacaee2b9b58b6312457e1df.bindPopup(popup_87a4067a924fce6f24152c6d885b6973)
+        ;
+
+        
+    
+    
+            var marker_e23a9da857020b0ec1a45bd9469f11dd = L.marker(
+                [9.4003, -79.8736],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_fd7f30fe4a241b90f8d66c1bea3d854f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_02718840cb1c6de7b7ed75d16d286c95 = $(`<div id="html_02718840cb1c6de7b7ed75d16d286c95" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1971</div>`)[0];
+                popup_fd7f30fe4a241b90f8d66c1bea3d854f.setContent(html_02718840cb1c6de7b7ed75d16d286c95);
+            
+        
+
+        marker_e23a9da857020b0ec1a45bd9469f11dd.bindPopup(popup_fd7f30fe4a241b90f8d66c1bea3d854f)
+        ;
+
+        
+    
+    
+            var marker_ee96a30423c8ef0475809d4bb5967605 = L.marker(
+                [28.716667, -112.333333],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_8d3701dc0a81e32448147a38ec4fda5b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ce8bd1d121c837a8038058b424ff4421 = $(`<div id="html_ce8bd1d121c837a8038058b424ff4421" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1966</div>`)[0];
+                popup_8d3701dc0a81e32448147a38ec4fda5b.setContent(html_ce8bd1d121c837a8038058b424ff4421);
+            
+        
+
+        marker_ee96a30423c8ef0475809d4bb5967605.bindPopup(popup_8d3701dc0a81e32448147a38ec4fda5b)
+        ;
+
+        
+    
+    
+            var marker_e823b3a76d0d8a138b5a43c28511bae8 = L.marker(
+                [28.2, -115.25],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_f03bd265a1a7572445280d81ebac23cd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_881c1e5e6ad6d34217f749a0c2e7d2de = $(`<div id="html_881c1e5e6ad6d34217f749a0c2e7d2de" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1934</div>`)[0];
+                popup_f03bd265a1a7572445280d81ebac23cd.setContent(html_881c1e5e6ad6d34217f749a0c2e7d2de);
+            
+        
+
+        marker_e823b3a76d0d8a138b5a43c28511bae8.bindPopup(popup_f03bd265a1a7572445280d81ebac23cd)
+        ;
+
+        
+    
+    
+            var marker_35d998af3f9cae47a561706d3070f895 = L.marker(
+                [38.25, -122.95],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_49c212e8bb81073cd7cf8d851664b4b5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_72f73de6dff34b0df7857b203da56dc8 = $(`<div id="html_72f73de6dff34b0df7857b203da56dc8" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1934</div>`)[0];
+                popup_49c212e8bb81073cd7cf8d851664b4b5.setContent(html_72f73de6dff34b0df7857b203da56dc8);
+            
+        
+
+        marker_35d998af3f9cae47a561706d3070f895.bindPopup(popup_49c212e8bb81073cd7cf8d851664b4b5)
+        ;
+
+        
+    
+    
+            var marker_4dbe4d890263a0c06c8fe69e2beee3ee = L.marker(
+                [31.35, -113.817],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_4438e651f53d31e1f23adbf8a534016f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fa50a856ce5f14ba7a5bd82a8dc50344 = $(`<div id="html_fa50a856ce5f14ba7a5bd82a8dc50344" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: 1889</div>`)[0];
+                popup_4438e651f53d31e1f23adbf8a534016f.setContent(html_fa50a856ce5f14ba7a5bd82a8dc50344);
+            
+        
+
+        marker_4dbe4d890263a0c06c8fe69e2beee3ee.bindPopup(popup_4438e651f53d31e1f23adbf8a534016f)
+        ;
+
+        
+    
+    
+            var marker_3d58d95523b53e58b6aa2bb08798b55d = L.marker(
+                [26.65, -111.766667],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_5177cff17e891fb8863e84ed77cc7803 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2ef601c470b761811589265a056b922a = $(`<div id="html_2ef601c470b761811589265a056b922a" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: ND</div>`)[0];
+                popup_5177cff17e891fb8863e84ed77cc7803.setContent(html_2ef601c470b761811589265a056b922a);
+            
+        
+
+        marker_3d58d95523b53e58b6aa2bb08798b55d.bindPopup(popup_5177cff17e891fb8863e84ed77cc7803)
+        ;
+
+        
+    
+    
+            var marker_ee448b1f1db2015a3f3574a83a764fb0 = L.marker(
+                [24.45, -110.366667],
+                {}
+            ).addTo(map_7a18e17de5d5ddc6a163b01f9c5365e1);
+        
+    
+        var popup_2d981fc85468eadd149d2ee398877834 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fc7a5382f08a56c99c1f2cffebe0393c = $(`<div id="html_fc7a5382f08a56c99c1f2cffebe0393c" style="width: 100.0%; height: 100.0%;">Callipallene californiensis (Hall, 1913) Year: ND</div>`)[0];
+                popup_2d981fc85468eadd149d2ee398877834.setContent(html_fc7a5382f08a56c99c1f2cffebe0393c);
+            
+        
+
+        marker_ee448b1f1db2015a3f3574a83a764fb0.bindPopup(popup_2d981fc85468eadd149d2ee398877834)
+        ;
+
+        
+    
+</script>
+</html>
