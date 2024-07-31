@@ -112,8 +112,7 @@ def retrieve_geographical_data(df):
 
     return all_occurrences
 
-def ensure_occurrencies_folder_exists():
-    folder_name = "occurrencies"
+def ensure_occurrencies_folder_exists(folder_name):
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
         print(f"Cartella '{folder_name}' creata.")
@@ -176,8 +175,8 @@ def fetch_genbank_data(species_name):
                         }
                         for qual in feature.findall("GBFeature_quals/GBQualifier"):
                             qual_name = qual.find("GBQualifier_name").text
-                            qual_value = qual.find("GBQualifier_value").text
-                            feature_data[qual_name] = qual_value
+                            qual_value = qual.find("GBQualifier_value")
+                            feature_data[qual_name] = qual_value.text if qual_value is not None else None
                         features.append(feature_data)
                     genbank_record['Features'] = features
                 else:
@@ -187,8 +186,47 @@ def fetch_genbank_data(species_name):
 
     return species_data
 
+def get_bold_data(species_name):
+    """
+    Ottiene dati dal BOLD Systems API per una data specie.
+    
+    :param species_name: Nome scientifico della specie
+    :return: Risultati della query in formato JSON o None se la risposta è vuota o non valida.
+    """
+    url = "http://www.boldsystems.org/index.php/API_Public/combined"
+    params = {
+        'taxon': species_name,
+        'format': 'json'
+    }
+    response = requests.get(url, params=params)
+    
+    if response.status_code == 200:
+        try:
+            return response.json()  # Prova a deserializzare il JSON
+        except ValueError as e:
+            return None
+    else:
+        return None
 
-
+def fetch_obis_data(scientific_name):
+    base_url = "https://api.obis.org/v3"
+    endpoint = "/occurrence"
+    
+    params = {
+        "scientificname": scientific_name
+    }
+    
+    response = requests.get(base_url + endpoint, params=params)
+    
+    if response.status_code == 200:
+        data = response.json()
+        records = data['results']
+        
+        # Convert the results to a pandas DataFrame
+        df = pd.DataFrame(records)
+        return df
+    else:
+        return None
 
 # Scarica tutti i taxa
 pycnogonida_taxa = get_all_taxa(aphia_id)
@@ -205,11 +243,33 @@ pycnogonida = df[(df['rank'] == 'Species') & (df['status'] == 'accepted') & (df[
 
 all_occurrences = retrieve_geographical_data(pycnogonida)
 
+# GeneBank
+ensure_occurrencies_folder_exists('genbank')
 for species_name in tqdm(pycnogonida["scientificname"], desc='GenBank data retrieving'):
     species_data = fetch_genbank_data(species_name)
     species_df = pd.json_normalize(species_data)
-    if species_df.shape != (0, 0):
-        species_df.to_csv('genbank/{}'.format(species_name.lower().replace(' ', '_')), sep = '\t', index = False)
+    if not species_df.empty:
+        species_df.to_csv('genbank/{}.tsv'.format(species_name.lower().replace(' ', '_')), sep='\t', index=False)
+
+# BOLD
+ensure_occurrencies_folder_exists('bold')
+# Assumi che pycnogonida["scientificname"] contenga i nomi delle specie
+for species_name in tqdm(pycnogonida["scientificname"], desc='BOLD data retrieving'):
+    species_data = get_bold_data(species_name)
+    if species_data:  # Controlla che i dati non siano None
+        species_df = pd.json_normalize(species_data)
+        if not species_df.empty:
+            filename = f'bold/{species_name.lower().replace(" ", "_")}.tsv'
+            species_df.to_csv(filename, sep='\t', index=False)
+    else:
+        pass
+
+# OBIS
+ensure_occurrencies_folder_exists('obis')
+for species_name in tqdm(pycnogonida["scientificname"], desc='OBIS data retrieving'):
+    species_df = fetch_obis_data(species_name)
+    if not species_df.empty:
+        species_df.to_csv('obis/{}.tsv'.format(species_name.lower().replace(' ', '_')), sep='\t', index=False)
 
 print("Dataset saving")
 pycnogonida.to_csv('pycnogonida.csv', index=False)
@@ -217,8 +277,8 @@ pycnogonida.to_csv('pycnogonida.csv', index=False)
 with open('all_occurrences.json', 'w') as json_file:
     json.dump(all_occurrences, json_file)
 
-ensure_occurrencies_folder_exists()
+ensure_occurrencies_folder_exists('occurrencies')
 for species, occurrences in all_occurrences.items():
     species_df = pd.DataFrame(occurrences)
     if species_df.shape != (0, 0):
-        species_df.to_csv("occurrencies/{}.tsv".format(species.lower().replace(' ', '_')), sep = '\t', index = False)
+        species_df.to_csv("gbif/{}.tsv".format(species.lower().replace(' ', '_')), sep = '\t', index = False)
